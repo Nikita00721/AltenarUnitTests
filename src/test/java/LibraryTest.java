@@ -39,4 +39,10 @@ public class LibraryTest {
         assertFalse(library.getAllBooks().contains(book1));
         assertEquals(2, library.getAllBooks().size());
     }
+
+    @Test
+    void testIsBookAvailable() {
+        assertTrue(library.isBookAvailable(book1));
+        assertFalse(library.isBookAvailable(book3));
+    }
 }
