@@ -59,4 +59,13 @@ public class LibraryTest {
         result = library.searchBooks("Unknown");
         assertEquals(0, result.size());
     }
+
+//    @Test
+//    void testSearchBooksCaseInsensitive() {
+//        List<Book> result = library.searchBooks("title");
+//        assertEquals(3, result.size());
+//
+//        result = library.searchBooks("AUTHOR");
+//        assertEquals(3, result.size());
+//    }
 }
