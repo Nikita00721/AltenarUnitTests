@@ -32,4 +32,11 @@ public class LibraryTest {
         assertEquals(4, library.getAllBooks().size());
         assertTrue(library.getAllBooks().contains(newBook));
     }
+
+    @Test
+    void testRemoveBook() {
+        library.removeBook(book1);
+        assertFalse(library.getAllBooks().contains(book1));
+        assertEquals(2, library.getAllBooks().size());
+    }
 }
