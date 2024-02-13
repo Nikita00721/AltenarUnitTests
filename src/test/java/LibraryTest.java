@@ -45,4 +45,18 @@ public class LibraryTest {
         assertTrue(library.isBookAvailable(book1));
         assertFalse(library.isBookAvailable(book3));
     }
+
+    @Test
+    void testSearchBooks() {
+        List<Book> result = library.searchBooks("Title 1");
+        assertEquals(1, result.size());
+        assertEquals(book1, result.get(0));
+
+        result = library.searchBooks("Author 2");
+        assertEquals(1, result.size());
+        assertEquals(book2, result.get(0));
+
+        result = library.searchBooks("Unknown");
+        assertEquals(0, result.size());
+    }
 }
