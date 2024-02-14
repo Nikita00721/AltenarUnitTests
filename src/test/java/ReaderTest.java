@@ -41,4 +41,11 @@ public class ReaderTest {
         assertTrue(book1.isAvailable());
         assertFalse(book2.isAvailable());
     }
+
+    @Test
+    void testReturnNonExistingBook() {
+        Book nonExistingBook = new Book("Non Existing", "Author", true);
+        reader.returnBook(nonExistingBook);
+        assertFalse(reader.hasBorrowedBook(nonExistingBook));
+    }
 }
