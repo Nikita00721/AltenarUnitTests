@@ -16,9 +16,9 @@ public class Reader {
         if (book.isAvailable()) {
             book.setAvailable(false);
             borrowedBooks.add(book);
-            System.out.println(name + " берёт книгу: " + book.getTitle());
+            System.out.println(name + " borrowed the book: " + book.getTitle());
         } else {
-            System.out.println("Книга " + book.getTitle() + " не доступна");
+            System.out.println("Book " + book.getTitle() + " is not available.");
         }
     }
 
@@ -26,9 +26,9 @@ public class Reader {
         if (borrowedBooks.contains(book)) {
             book.setAvailable(true);
             borrowedBooks.remove(book);
-            System.out.println(name + " Возвращает книгу: " + book.getTitle());
+            System.out.println(name + " returned the book: " + book.getTitle());
         } else {
-            System.out.println(name + " Не брал книгу: " + book.getTitle());
+            System.out.println(name + " didn't borrow the book: " + book.getTitle());
         }
     }
 
@@ -45,13 +45,13 @@ public class Reader {
             book.setAvailable(true);
         }
         borrowedBooks.clear();
-        System.out.println(name + " вернул все взятые книги");
+        System.out.println(name + " returned all borrow books");
     }
 
     public void displayBorrowedBooks() { // показать список (в нормальном виде) всех взятых книг
-        System.out.println(name + " взял книгу:");
+        System.out.println(name + " borrow book:");
         for (Book book : borrowedBooks) {
-            System.out.println("- " + book.getTitle() + " автора " + book.getAuthor());
+            System.out.println("- " + book.getTitle() + " author " + book.getAuthor());
         }
     }
 }

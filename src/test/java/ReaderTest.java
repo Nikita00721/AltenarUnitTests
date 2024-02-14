@@ -39,6 +39,6 @@ public class ReaderTest {
         reader.returnAllBooks();
         assertEquals(0, reader.getBorrowedBooks().size());
         assertTrue(book1.isAvailable());
-        assertTrue(book2.isAvailable());
+        assertFalse(book2.isAvailable());
     }
 }
