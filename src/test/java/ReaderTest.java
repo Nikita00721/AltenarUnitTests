@@ -32,4 +32,13 @@ public class ReaderTest {
         assertTrue(reader.hasBorrowedBook(book2));
     }
 
+    @Test
+    void testReturnAllBooks() {
+        reader.borrowBook(book1);
+        reader.borrowBook(book2);
+        reader.returnAllBooks();
+        assertEquals(0, reader.getBorrowedBooks().size());
+        assertTrue(book1.isAvailable());
+        assertTrue(book2.isAvailable());
+    }
 }
