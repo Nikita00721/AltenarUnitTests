@@ -16,4 +16,11 @@ public class ReaderTest {
         book1 = new Book("Title 1", "Author 1", true);
         book2 = new Book("Title 2", "Author 2", false);
     }
+
+    @Test
+    void testBorrowBook() {
+        reader.borrowBook(book1);
+        assertTrue(reader.hasBorrowedBook(book1));
+        assertFalse(reader.hasBorrowedBook(book2));
+    }
 }
